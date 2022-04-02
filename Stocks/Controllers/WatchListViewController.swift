@@ -19,7 +19,13 @@ class WatchListViewController: UIViewController {
     }
     // MARK: - Private
     private func setTitle() {
-        let titleView = UIView(frame: <#T##CGRect#>)
+        let titleView = UIView(frame: CGRect(x: 0, y: 0, width: view.width, height: navigationController?.navigationBar.height ?? 100))
+        let label = UILabel(frame: CGRect(x: 10, y: 0, width: titleView.width - 20, height: titleView.height))
+        label.text = "Stocks"
+        label.font = .systemFont(ofSize: 40, weight: .medium)
+        titleView.addSubview(label)
+        
+        navigationItem.titleView = titleView
     }
     private func setSearchController() {
         let resultVC = SearchResultsViewController()
