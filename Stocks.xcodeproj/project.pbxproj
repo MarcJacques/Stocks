@@ -19,6 +19,7 @@
 		058EAD3F27F87A38002D25C6 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058EAD3E27F87A38002D25C6 /* PersistenceManager.swift */; };
 		058EAD4127F87A46002D25C6 /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058EAD4027F87A46002D25C6 /* HapticsManager.swift */; };
 		05E9266227F8BE6700847FEC /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E9266127F8BE6700847FEC /* Extensions.swift */; };
+		05E9266427F8C26500847FEC /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E9266327F8C26500847FEC /* SearchResultTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		058EAD3E27F87A38002D25C6 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		058EAD4027F87A46002D25C6 /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
 		05E9266127F8BE6700847FEC /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		05E9266327F8C26500847FEC /* SearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				058EAD2727F7F423002D25C6 /* LaunchScreen.storyboard */,
+				05E9266327F8C26500847FEC /* SearchResultTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				058EAD4127F87A46002D25C6 /* HapticsManager.swift in Sources */,
+				05E9266427F8C26500847FEC /* SearchResultTableViewCell.swift in Sources */,
 				058EAD3B27F7F67B002D25C6 /* StockDetailsViewController.swift in Sources */,
 				058EAD2127F7F41E002D25C6 /* WatchListViewController.swift in Sources */,
 				058EAD3727F7F641002D25C6 /* TopStoriesNewsViewController.swift in Sources */,
