@@ -8,13 +8,19 @@
 import UIKit
 
 class WatchListViewController: UIViewController {
-
+    
+    // MARK: - Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         setSearchController()
+        setTitle()
     }
-    
+    // MARK: - Private
+    private func setTitle() {
+        let titleView = UIView(frame: <#T##CGRect#>)
+    }
     private func setSearchController() {
         let resultVC = SearchResultsViewController()
         let searchVC = UISearchController(searchResultsController: resultVC)
