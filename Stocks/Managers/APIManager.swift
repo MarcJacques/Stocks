@@ -23,8 +23,15 @@ final class APIManager {
     // get stock info
     
     // search stocks
-    public func search( query: String, completion: @escaping (Result<[String], Error>) -> Void) {
-        guard let url = url(for: .search, queryParameters: ["q": query]) else { return }
+    public func search( query: String, completion: @escaping (Result<SearchResponse, Error>) -> Void) {
+        request(
+            url: url(
+                for: .search,
+                queryParameters: ["q": query]
+            ),
+            expecting: SearchResponse.self,
+            completion: completion
+            )
     }
     
     // MARK: - Private functions

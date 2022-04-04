@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0549B5E727FBACC00005E265 /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0549B5E627FBACC00005E265 /* SearchResponse.swift */; };
 		058EAD1D27F7F41E002D25C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058EAD1C27F7F41E002D25C6 /* AppDelegate.swift */; };
 		058EAD1F27F7F41E002D25C6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058EAD1E27F7F41E002D25C6 /* SceneDelegate.swift */; };
 		058EAD2127F7F41E002D25C6 /* WatchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058EAD2027F7F41E002D25C6 /* WatchListViewController.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0549B5E627FBACC00005E265 /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchResponse.swift; path = Stocks/Views/SearchResponse.swift; sourceTree = SOURCE_ROOT; };
 		058EAD1927F7F41E002D25C6 /* Stocks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stocks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		058EAD1C27F7F41E002D25C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		058EAD1E27F7F41E002D25C6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 		058EAD3227F7F495002D25C6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0549B5E627FBACC00005E265 /* SearchResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 				058EAD3F27F87A38002D25C6 /* PersistenceManager.swift in Sources */,
 				05E9266227F8BE6700847FEC /* Extensions.swift in Sources */,
 				058EAD1D27F7F41E002D25C6 /* AppDelegate.swift in Sources */,
+				0549B5E727FBACC00005E265 /* SearchResponse.swift in Sources */,
 				058EAD1F27F7F41E002D25C6 /* SceneDelegate.swift in Sources */,
 				058EAD3927F7F65A002D25C6 /* SearchResultsViewController.swift in Sources */,
 				058EAD3D27F87A2A002D25C6 /* APIManager.swift in Sources */,
