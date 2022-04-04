@@ -11,9 +11,9 @@ final class APIManager {
     static let shared = APIManager()
     
     private struct Constants {
-        static let apiKey = ""
-        static let sandboxApiKey = ""
-        static let baseUrl = ""
+        static let apiKey = "c95mo1qad3iek697ocmg"
+        static let sandboxApiKey = "sandbox_c95mo1qad3iek697ocn0"
+        static let baseUrl = "https://finnhub.io/api/v1"
     }
     
     private init() {}
