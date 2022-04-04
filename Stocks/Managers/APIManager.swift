@@ -24,10 +24,12 @@ final class APIManager {
     
     // search stocks
     public func search( query: String, completion: @escaping (Result<SearchResponse, Error>) -> Void) {
+        guard let safeQuery = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
+        
         request(
             url: url(
                 for: .search,
-                queryParameters: ["q": query]
+                queryParameters: ["q": safeQuery]
             ),
             expecting: SearchResponse.self,
             completion: completion
