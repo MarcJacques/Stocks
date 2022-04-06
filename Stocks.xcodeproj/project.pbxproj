@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0549B5E727FBACC00005E265 /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0549B5E627FBACC00005E265 /* SearchResponse.swift */; };
+		057275D527FE5EC500DE207D /* PanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057275D427FE5EC500DE207D /* PanelViewController.swift */; };
 		058EAD1D27F7F41E002D25C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058EAD1C27F7F41E002D25C6 /* AppDelegate.swift */; };
 		058EAD1F27F7F41E002D25C6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058EAD1E27F7F41E002D25C6 /* SceneDelegate.swift */; };
 		058EAD2127F7F41E002D25C6 /* WatchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058EAD2027F7F41E002D25C6 /* WatchListViewController.swift */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		0549B5E627FBACC00005E265 /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchResponse.swift; path = Stocks/Views/SearchResponse.swift; sourceTree = SOURCE_ROOT; };
+		057275D427FE5EC500DE207D /* PanelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelViewController.swift; sourceTree = "<group>"; };
 		058EAD1927F7F41E002D25C6 /* Stocks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stocks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		058EAD1C27F7F41E002D25C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		058EAD1E27F7F41E002D25C6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				058EAD3627F7F641002D25C6 /* TopStoriesNewsViewController.swift */,
 				058EAD3827F7F65A002D25C6 /* SearchResultsViewController.swift */,
 				058EAD3A27F7F67B002D25C6 /* StockDetailsViewController.swift */,
+				057275D427FE5EC500DE207D /* PanelViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 				0549B5E727FBACC00005E265 /* SearchResponse.swift in Sources */,
 				058EAD1F27F7F41E002D25C6 /* SceneDelegate.swift in Sources */,
 				058EAD3927F7F65A002D25C6 /* SearchResultsViewController.swift in Sources */,
+				057275D527FE5EC500DE207D /* PanelViewController.swift in Sources */,
 				058EAD3D27F87A2A002D25C6 /* APIManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
