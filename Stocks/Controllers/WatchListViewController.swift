@@ -19,8 +19,11 @@ class WatchListViewController: UIViewController {
         view.backgroundColor = .systemBackground
         setSearchController()
         setTitle()
+
     }
     // MARK: - Private
+    
+  
     private func setTitle() {
         let titleView = UIView(frame: CGRect(x: 0, y: 0, width: view.width, height: navigationController?.navigationBar.height ?? 100))
         let label = UILabel(frame: CGRect(x: 10, y: 0, width: titleView.width - 20, height: titleView.height))
