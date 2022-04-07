@@ -1,5 +1,5 @@
 //
-//  TopStoriesNewsViewController.swift
+//  NewsViewController.swift
 //  Stocks
 //
 //  Created by Marc Jacques on 4/1/22.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TopStoriesNewsViewController: UIViewController {
+class NewsViewController: UIViewController {
     
     let tableView = UITableView()
 
