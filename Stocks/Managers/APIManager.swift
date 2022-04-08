@@ -36,10 +36,21 @@ final class APIManager {
             )
     }
     
+    public func news(
+        for type: NewsViewController.`Type`,
+        completion: @escaping(Result<[NewsStory], Error>) -> Void
+    ) {
+        request(
+            url: url(for: .topStories, queryParameters: [ "category": "general"]),
+            expecting: [NewsStory].self,
+            completion: completion)
+    }
+    
     // MARK: - Private functions
     
     private enum Endpoint: String {
         case search
+        case topStories = "news"
         
     }
     

@@ -69,7 +69,7 @@ extension WatchListViewController: UISearchResultsUpdating {
         searchTimer?.invalidate()
         
         //search
-        searchTimer = Timer.scheduledTimer(withTimeInterval: 0.8, repeats: false, block: { _ in
+        searchTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { _ in
             APIManager.shared.search(query: query) { result in
                 switch result {
                 case .success(let response):
