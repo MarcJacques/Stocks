@@ -7,9 +7,17 @@
 
 import UIKit
 
+protocol NewsHeaderViewDelegate: AnyObject {
+    func newsHeaderViewDidTapAddButton(_ headerView: NewsHeaderView)
+    
+}
+
+
 class NewsHeaderView: UITableViewHeaderFooterView {
     static let identifier = "NewsHeaderView"
     static let preferredHeight: CGFloat = 70
+    
+    weak var delegate: NewsHeaderViewDelegate?
     
     struct ViewModel {
         let title: String
@@ -49,6 +57,7 @@ class NewsHeaderView: UITableViewHeaderFooterView {
     
     @objc private func didTapButton() {
         //
+        delegate?.newsHeaderViewDidTapAddButton(self)
     }
     
     override func layoutSubviews() {
@@ -62,7 +71,7 @@ class NewsHeaderView: UITableViewHeaderFooterView {
         
         button.sizeToFit()
         button.frame = CGRect(
-            x: contentView.width - button.width - 14,
+            x: contentView.width - button.width - 16,
             y: (contentView.height - button.height)/2,
             width: button.width + 8,
             height: button.height

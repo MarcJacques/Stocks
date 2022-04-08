@@ -9,17 +9,6 @@ import UIKit
 
 class NewsViewController: UIViewController {
     
-    let tableView: UITableView = {
-        let table =  UITableView()
-        table.register(
-            NewsHeaderView.self,
-            forHeaderFooterViewReuseIdentifier: NewsHeaderView.identifier)
-        table.backgroundColor = .clear
-        return table
-    }()
-    
-    private let type: Type
-    
     enum `Type` {
         case topStories
         case company(symbol: String)
@@ -33,6 +22,21 @@ class NewsViewController: UIViewController {
             }
         }
     }
+// MARK: - Properties
+    
+    private var stories: [String] = []
+    
+    private let type: Type
+    
+    let tableView: UITableView = {
+        let table =  UITableView()
+        table.register(
+            NewsHeaderView.self,
+            forHeaderFooterViewReuseIdentifier: NewsHeaderView.identifier)
+        table.backgroundColor = .clear
+        return table
+    }()
+    
     // MARK: Initializers
     init(type: Type){
         self.type = type
@@ -97,7 +101,10 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
         guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: NewsHeaderView.identifier) as? NewsHeaderView else {
             return nil
         }
-        header.configure(with: .init(title: self.type.title, shouldShowAddButton: true))
+        header.configure(with: .init(
+            title: self.type.title,
+            shouldShowAddButton: false
+        ))
         return header
     }
     
