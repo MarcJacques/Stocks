@@ -14,6 +14,7 @@ final class APIManager {
         static let apiKey = "c95mo1qad3iek697ocmg"
         static let sandboxApiKey = "sandbox_c95mo1qad3iek697ocn0"
         static let baseUrl = "https://finnhub.io/api/v1/"
+        static let day: TimeInterval = 3600 * 24
     }
     
     private init() {}
@@ -33,17 +34,35 @@ final class APIManager {
             ),
             expecting: SearchResponse.self,
             completion: completion
-            )
+        )
     }
     
     public func news(
         for type: NewsViewController.`Type`,
         completion: @escaping(Result<[NewsStory], Error>) -> Void
     ) {
-        request(
-            url: url(for: .topStories, queryParameters: [ "category": "general"]),
-            expecting: [NewsStory].self,
-            completion: completion)
+        switch type {
+        case .topStories:
+            request(
+                url: url(for: .topStories, queryParameters: [ "category": "general"]),
+                expecting: [NewsStory].self,
+                completion: completion
+            )
+        case .company(let symbol):
+            let today = Date()
+            let oneMonthBack = today.addingTimeInterval( -(Constants.day * 7))
+            request(
+                url: url(
+                    for: .companyNews,
+                    queryParameters: [
+                        "symbol": symbol,
+                        "from": DateFormatter.newsDateFormatter.string(from: oneMonthBack),
+                        "to": DateFormatter.newsDateFormatter.string(from: today)
+                    ]),
+                expecting: [NewsStory].self,
+                completion: completion
+            )
+        }
     }
     
     // MARK: - Private functions
@@ -51,7 +70,7 @@ final class APIManager {
     private enum Endpoint: String {
         case search
         case topStories = "news"
-        
+        case companyNews = "company-news"
     }
     
     private enum APIError: Error {
@@ -71,9 +90,9 @@ final class APIManager {
         //add token
         queryItems.append(.init(name: "token", value: Constants.apiKey))
         
-        //add queri items string
+        //add query items string
         
-       urlString += "?" + queryItems.map { "\($0.name)=\($0.value ?? "")"  }.joined(separator: "&")
+        urlString += "?" + queryItems.map { "\($0.name)=\($0.value ?? "")"  }.joined(separator: "&")
         
         print("\n\(urlString)\n")
         return URL(string: urlString)
