@@ -11,7 +11,9 @@ class NewsViewController: UIViewController {
     
     let tableView: UITableView = {
         let table =  UITableView()
-        table.register(NewsHeaderView.self, forHeaderFooterViewReuseIdentifier: NewsHeaderView.identifier)
+        table.register(
+            NewsHeaderView.self,
+            forHeaderFooterViewReuseIdentifier: NewsHeaderView.identifier)
         table.backgroundColor = .clear
         return table
     }()
@@ -95,7 +97,7 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
         guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: NewsHeaderView.identifier) as? NewsHeaderView else {
             return nil
         }
-        header.configure(with: .init(title: self.type.title, shouldShowAddButton: false))
+        header.configure(with: .init(title: self.type.title, shouldShowAddButton: true))
         return header
     }
     
