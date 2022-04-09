@@ -34,7 +34,7 @@ class NewsStoryTableViewCell: UITableViewCell {
     
     private let headlineLabel:  UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 24, weight: .regular)
+        label.font = .systemFont(ofSize: 20, weight: .regular)
         label.numberOfLines = 0
         return label
     }()
@@ -51,7 +51,7 @@ class NewsStoryTableViewCell: UITableViewCell {
         let imageView = UIImageView()
         imageView.backgroundColor = .tertiarySystemBackground
         imageView.clipsToBounds = true
-        imageView.contentMode = .scaleToFill
+        imageView.contentMode = .scaleAspectFill
         imageView.layer.cornerRadius = 6
         imageView.layer.masksToBounds = true
         return imageView
@@ -70,10 +70,10 @@ class NewsStoryTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        let imageSize: CGFloat = contentView.height - 6
+        let imageSize: CGFloat = contentView.height - 12
         storyImageView.frame = CGRect(
             x: contentView.width-imageSize - 10,
-            y: 3,
+            y: (contentView.height - imageSize) / 2,
             width: imageSize,
             height: imageSize
         )
@@ -117,6 +117,7 @@ class NewsStoryTableViewCell: UITableViewCell {
         sourceLabel.text = viewModel.source
         dateLabel.text = viewModel.dateString
         storyImageView.sd_setImage(with: viewModel.imageURL, completed: nil)
+        
         
 //        storyImageView.setImage(with: viewModel.imageURL)
     }

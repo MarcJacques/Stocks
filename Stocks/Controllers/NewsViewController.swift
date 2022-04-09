@@ -25,17 +25,7 @@ class NewsViewController: UIViewController {
     }
     // MARK: - Properties
     
-    private var stories: [NewsStory] = [
-        NewsStory(
-            category: "tech",
-            datetime: 123,
-            headline: "Headline here",
-            image: " ",
-            related: "related",
-            source: "CNN",
-            summary: " ",
-            url: "")
-    ]
+    private var stories: [NewsStory] = []
     
     private let type: Type
     
@@ -72,7 +62,9 @@ class NewsViewController: UIViewController {
         super.viewDidLayoutSubviews()
         tableView.frame = view.bounds
     }
+    
     // MARK: - Private
+    
     private func setupTable() {
         view.addSubview(tableView)
         tableView.delegate = self
@@ -80,7 +72,17 @@ class NewsViewController: UIViewController {
     }
     
     private func fetchNews() {
-        
+        APIManager.shared.news(for: type) { result in
+            switch result {
+            case .success(let stories):
+                DispatchQueue.main.async {
+                    self.stories = stories
+                    self.tableView.reloadData()
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
     
     private func openURL(url: URL) {
