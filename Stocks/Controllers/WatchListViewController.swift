@@ -16,7 +16,7 @@ class WatchListViewController: UIViewController {
     
     
     /// Model
-    private var watchlistMap : [String: String] = [ : ]
+    private var watchlistMap : [String: [String]] = [ : ]
     
     ///ViewModels
     private var viewModels: [String] = []
